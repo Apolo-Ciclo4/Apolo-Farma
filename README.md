@@ -11,4 +11,4 @@ Christian Camilo Ortiz R. 1030559185
 
 Cristian Sebastian Neita Alvarez 1007751125
 
-Yuely Rios Morales C.c 1022369506
+Yeimy Lizeth Vega Vargas 1052395474
