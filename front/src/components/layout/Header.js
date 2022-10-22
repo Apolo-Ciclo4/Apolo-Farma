@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -59,7 +60,10 @@ const Header = () => {
                         </button>
                         <ul class="dropdown-menu fw-light">
                             <li><a class="dropdown-item fw-light" href="#">Protección Solar</a></li>
-                            <li><a class="dropdown-item fw-light" href="#">Cuidado Facial</a></li>
+                            <li><Link class="dropdown-item fw-light" to={`/Dermocosmeticos/cuidadofacial`}>Cuidado Facial</Link> </li>
+
+
+
                             <li><a class="dropdown-item fw-light" href="#">Cuidado de Cabello</a></li>
                             <li><a class="dropdown-item fw-light" href="#">Cuidado Corporal</a></li>
                             <li><a class="dropdown-item fw-light" href="#">Infantil</a></li>
