@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 const Home = () => {
     return (
         <Fragment>
+           
             <div style={{marginTop: "-48px"}}>
                 <div id="carouselExampleCaptions" class="carousel slide mt-5" data-bs-ride="false">
                     <div class="carousel-indicators">
@@ -36,6 +37,11 @@ const Home = () => {
                     </button>
                 </div>
             </div>
+            
+        <div con>
+
+        </div>
+
         </Fragment>
     )
 }
