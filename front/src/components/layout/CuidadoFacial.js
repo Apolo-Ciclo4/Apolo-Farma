@@ -5,11 +5,11 @@ const CuidadoFacial = () => {
   return (
     <Fragment>     
           <section id='productos' className=' container mt-5  fw-light'>         
-            <div className ='row  '>
+            <div className ='row justify-content-center'>
               <h1 className=' fw-light 'id='Encabezado de productos faciles'> Ultimos productos </h1>
-                <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
+                <div className='col-sm-12 col-md-6 col-lg-3 my-3 '>
                         <div className='card p-3 rounded'>                            
-                            <img className='card-img-top mx-auto' src='./images/banner/b4.jpg' alt="Agua Termal Avene"></img>
+                            <img src='../images/dermocuidado/40772-1-AGUA-TERMAL-AVENE-FCO-X-150ML.jpg' alt="Agua Termal Avene 1"></img>
                               <div className='card-body d-flex flex-column'>
                                   <h5 id="titulo_producto"><a href='http://localhost:3000'>Agua Termal Avene</a></h5>
                                     <div className='rating mt-auto'>
@@ -28,7 +28,7 @@ const CuidadoFacial = () => {
                     {/*Producto dos*/} 
                     <div className='col-sm-12 col-md- col-lg-3 my-3'>
                         <div className='card p-3 rounded'>                            
-                            <img className='card-img-top mx-auto' src='./images/banner/b4.jpg' alt="Agua Termal Avene"></img>
+                        <img src='../images/dermocuidado/40772-1-AGUA-TERMAL-AVENE-FCO-X-150ML.jpg' alt="Agua Termal Avene 1"></img>
                             <div className='card-body d-flex flex-column'>
                                 <h5 id="titulo_producto"><a href='http://localhost:3000'>Agua Termal Avene</a></h5>
                                 <div className='rating mt-auto'>
@@ -44,9 +44,9 @@ const CuidadoFacial = () => {
                         </div>
                     </div>
                      {/*Producto tres*/} 
-                     <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
+                     <div className='col-sm-12 col-md-6 col-lg-3 my-3 '>
                         <div className='card p-3 rounded'>                            
-                            <img className='card-img-top mx-auto' src='./images/banner/b4.jpg' alt="Agua Termal Avene"></img>
+                        <img src='../images/dermocuidado/40772-1-AGUA-TERMAL-AVENE-FCO-X-150ML.jpg' alt="Agua Termal Avene 1"></img>
                             <div className='card-body d-flex flex-column'>
                                 <h5 id="titulo_producto"><a href='http://localhost:3000'>Agua Termal Avene</a></h5>
                                 <div className='rating mt-auto'>

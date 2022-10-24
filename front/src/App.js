@@ -4,7 +4,9 @@ import './App.css';
 import Footer from './components/layout/Footer';
 import Home from './components/Home';
 import CuidadoFacial from './components/layout/CuidadoFacial';
+import Carrito from './components/carrito/Carrito';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/Dermocosmeticos/cuidadofacial' element={<CuidadoFacial/>}/>
+        <Route path='/cart/details' element={<Carrito/>}/>
       </Routes>
       <br></br>
       <Footer></Footer>
