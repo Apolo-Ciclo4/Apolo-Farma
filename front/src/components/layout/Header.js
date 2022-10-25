@@ -7,6 +7,7 @@ const Header = () => {
             <nav class="navbar navbar-expand-lg navbar-light fixed-top fw-light text-white" style={{ background: "#388659" }}>
                 <div class="container-fluid">
                     <Link to={`/`} class="navbar-brand fs-2 text-white"><i class="bi bi-heart-pulse-fill text-warning"></i> Apolo Farma </Link>
+
                     <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon text-white"></span>
                     </button>
