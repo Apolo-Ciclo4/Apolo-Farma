@@ -13,6 +13,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/Home' element={<Home/>}/>        
         <Route path='/Dermocosmeticos/cuidadofacial' element={<CuidadoFacial/>}/>
       </Routes>
       <br></br>
