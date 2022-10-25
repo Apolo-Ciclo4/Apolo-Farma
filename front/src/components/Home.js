@@ -37,7 +37,7 @@ const Home = () => {
                     </button>
                 </div>
             </div>
-            
+           
         <div>
 
             {/* VER TODOS LOS PRODUCTOS */}
@@ -148,7 +148,6 @@ const Home = () => {
            </section>
 
         </div>
-
         </Fragment>
     )
 }

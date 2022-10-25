@@ -6,7 +6,8 @@ const Header = () => {
         <Fragment>
             <nav class="navbar navbar-expand-lg navbar-light fixed-top fw-light text-white" style={{ background: "#388659" }}>
                 <div class="container-fluid">
-                    <a class="navbar-brand fs-2 text-white">  <Link class="bi bi-heart-pulse-fill text-warning" to={`/Home`}></Link> Apolo Farma</a>
+                    <Link to={`/`} class="navbar-brand fs-2 text-white"><i class="bi bi-heart-pulse-fill text-warning"></i> Apolo Farma </Link>
+
                     <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon text-white"></span>
                     </button>
@@ -27,13 +28,13 @@ const Header = () => {
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a href="" className='btn text-white'><i class="bi bi-person fs-2"></i> <h6 className='fw-light'>Iniciar Sesión</h6></a>
-                                <button type="button" class="btn position-relative margin-auto text-white">
+                                <Link to={`/cart/details`} type="button" class="btn position-relative margin-auto text-white">
                                     <i class="bi bi-cart-plus fs-3"></i>
                                     <span class="position-absolute top-50 start- translate-middle badge rounded-pill bg-danger">
-                                        2
+                                        3
                                     </span>
                                     <h6 className='fw-light mt-1 text-white'>Mis compras</h6>
-                                </button>
+                                </Link>
                             </li>
                         </ul>
 
@@ -47,7 +48,7 @@ const Header = () => {
                             Medicamentos
                         </button>
                         <ul class="dropdown-menu fw-light">
-                            <li><a class="dropdown-item fw-light" href="#">Alivio del dolor</a></li>
+                            <li><Link to={`/`} class="dropdown-item fw-light">Alivio del dolor</Link></li>
                             <li><a class="dropdown-item fw-light" href="#">Sistema Respiratorio</a></li>
                             <li><a class="dropdown-item fw-light" href="#">Metabólicos</a></li>
                             <li><a class="dropdown-item fw-light" href="#">Anticonceptivos</a></li>
@@ -61,9 +62,6 @@ const Header = () => {
                         <ul class="dropdown-menu fw-light">
                             <li><a class="dropdown-item fw-light" href="#">Protección Solar</a></li>
                             <li><Link class="dropdown-item fw-light" to={`/Dermocosmeticos/cuidadofacial`}>Cuidado Facial</Link> </li>
-
-
-
                             <li><a class="dropdown-item fw-light" href="#">Cuidado de Cabello</a></li>
                             <li><a class="dropdown-item fw-light" href="#">Cuidado Corporal</a></li>
                             <li><a class="dropdown-item fw-light" href="#">Infantil</a></li>

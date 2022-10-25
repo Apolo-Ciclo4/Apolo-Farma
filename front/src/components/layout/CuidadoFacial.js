@@ -30,17 +30,21 @@ const CuidadoFacial = () => {
                   {/*Producto dos*/}
                   <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
                         <div className='card p-3 rounded'>                            
+
                          <img src='../images/dermocuidado/110482-1-HYDRABIO-SERUM-PIEL-SECA-FCO-X-40ML.jpg' alt="Hydrabio Serum Piel Seca"></img>
                               <div className='card-body d-flex flex-column'>
                                   <h5 id="titulo_producto"><a href='http://localhost:3000' className='color-links'>Hydrabio Serum Piel Seca</a> </h5>
                                     <div className='rating mt-auto' >                                      
                                     <span id="No_de_opiniones"> FRASCO 40ML</span>
+
+
                                     </div>
                                     <p className='card-text'>$120.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-outline-warning'>
                                     Agregar
                                 </a>
                             </div>
                         </div>
+
                   </div>
                   {/*Producto tres*/}
                   <div className='col-sm-12 col-md-6 col-lg-3 my-3'>

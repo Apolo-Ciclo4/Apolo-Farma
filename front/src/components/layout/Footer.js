@@ -5,9 +5,9 @@ const Footer = () => {
         <Fragment>
             <footer class="py-5 my-5 text-white fw-light" style={{background: "#388659"}}>
                 <div class="row text-white">
-                    <div class="col-6 col-md-2 mb-3">
-                        <h5>Apolo Farma</h5>
-                        <ul class="nav flex-column text-white">
+                    <div class="col-6 col-md-2 mb-3 ">
+                        <h5 className='px-2'>Apolo Farma</h5>
+                        <ul class="nav flex-column text-white px-2">
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Features</a></li>
                             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Pricing</a></li>
