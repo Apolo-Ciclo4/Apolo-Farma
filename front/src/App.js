@@ -6,6 +6,7 @@ import Home from './components/Home';
 import CuidadoFacial from './components/layout/CuidadoFacial';
 import Carrito from './components/carrito/Carrito';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import ProducsAdmin from './components/admin/ProducsAdmin';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/Home' element={<Home/>}/>        
         <Route path='/Dermocosmeticos/cuidadofacial' element={<CuidadoFacial/>}/>
         <Route path='/cart/details' element={<Carrito/>}/>
+        <Route path='/admin/products' element={<ProducsAdmin/>}/>
       </Routes>
       <br></br>
       <Footer></Footer>

@@ -5,7 +5,7 @@ const CuidadoFacial = () => {
     return (
         <Fragment>
             <div className='container fw-light mt-5 '>
-                <h1 className='fw-light'>Resumen de compra</h1>
+                <h1 className='title  ' id='listadoProductos'>Resumen de Compra</h1>
                 <div class="container">
                     <div class="row row-cols-6 mt-5 text-center">
                         <div class="col">
@@ -51,11 +51,11 @@ const CuidadoFacial = () => {
                     <div className='row'>
                         <div className='col'>
                             <h5 className='text-end mx-5 px-4'>Total Compra: <span className='fw-light'>$155.000</span></h5>
-                       </div>
+                        </div>
                     </div>
                     <div className='row text-end mx-5 px-1 mt-2'>
                         <div className='col justify-content-end'>
-                        <a className='btn btn-success justify-content-end text-white'>Finalizar Compra <i class="bi bi-lock"></i></a>
+                            <a className='btn btn-success justify-content-end text-white'>Finalizar Compra <i class="bi bi-lock"></i></a>
                         </div>
                     </div>
                 </div>
