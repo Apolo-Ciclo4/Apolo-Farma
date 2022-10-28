@@ -5,35 +5,35 @@ const Home = () => {
         <Fragment>
            
             <div style={{marginTop: "-48px"}}>
-                <div id="carouselExampleCaptions" class="carousel slide mt-5" data-bs-ride="false">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <div id="carouselExampleCaptions" className="carousel slide mt-5" data-bs-ride="false">
+                    <div className="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
 
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="./images/banner/b1.jpg" class="d-block w-100" alt="banner1"></img>
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <img src="./images/banner/b1.jpg" className="d-block w-100" alt="banner1"></img>
                         </div>
-                        <div class="carousel-item">
-                            <img src="./images/banner/b2.jpg" class="d-block w-100" alt="banner2"></img>
+                        <div className="carousel-item">
+                            <img src="./images/banner/b2.jpg" className="d-block w-100" alt="banner2"></img>
                         </div>
-                        <div class="carousel-item">
-                            <img src="./images/banner/b3.jpg" class="d-block w-100" alt="banner3"></img>
+                        <div className="carousel-item">
+                            <img src="./images/banner/b3.jpg" className="d-block w-100" alt="banner3"></img>
                         </div>
-                        <div class="carousel-item">
-                            <img src="./images/banner/b4.jpg" class="d-block w-100" alt="banner4"></img>
+                        <div className="carousel-item">
+                            <img src="./images/banner/b4.jpg" className="d-block w-100" alt="banner4"></img>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
@@ -58,7 +58,7 @@ const Home = () => {
                                     </div>
                                     <p className='card-text'>$75000</p>                                    
                                     <a href='http://localhost:3000' id="view_btn" className='btn btn-outline-warning'>
-                                    Agregar
+                                    Agregar <i class="bi bi-cart-plus"></i>
                                 </a>
                             </div>
                         </div>
@@ -74,7 +74,7 @@ const Home = () => {
                                     <span id="No_de_opiniones"> FRASCO 40ML</span>
                                     </div>
                                     <p className='card-text'>$120.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-outline-warning'>
-                                    Agregar
+                                    Agregar <i class="bi bi-cart-plus"></i>
                                 </a>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ const Home = () => {
                                     <span id="No_de_opiniones"> FRASCO 150ML</span>
                                     </div>
                                     <p className='card-text'>$52.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-outline-warning'>
-                                    Agregar
+                                    Agregar <i class="bi bi-cart-plus"></i>
                                 </a>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ const Home = () => {
                                     </div>
                                     <p className='card-text'>$82.000</p>                                    
                                     <a href='http://localhost:3000' id="view_btn" className='btn btn-outline-warning'>
-                                    Agregar
+                                    Agregar <i class="bi bi-cart-plus"></i>
                                 </a>
                             </div>
                         </div>
@@ -124,7 +124,7 @@ const Home = () => {
                                     <span id="No_de_opiniones"> FRASCO 50ML</span>
                                     </div>
                                     <p className='card-text'>$52.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-outline-warning'>
-                                    Agregar
+                                    Agregar <i class="bi bi-cart-plus"></i>
                                 </a>
                             </div>
                         </div>
@@ -139,7 +139,7 @@ const Home = () => {
                                     <span id="No_de_opiniones"> FRASCO 150ML</span>
                                     </div>
                                     <p className='card-text'>$52.000</p><a href='http://localhost:3000' id="view_btn" className='btn btn-outline-warning'>
-                                    Agregar
+                                    Agregar <i class="bi bi-cart-plus"></i>
                                 </a>
                             </div>
                         </div>
