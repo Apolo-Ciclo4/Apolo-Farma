@@ -16,7 +16,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/Home' element={<Home/>}/>        
+        <Route path='/Home' element={<Home/>}/>      
         <Route path='/Dermocosmeticos/cuidadofacial' element={<CuidadoFacial/>}/>
         <Route path='/cart/details' element={<Carrito/>}/>
         <Route path='/admin/products' element={<ProducsAdmin/>}/>
