@@ -1,4 +1,5 @@
 export const consumoData = [{
+  "id": "1",
   "nombre": "AGUA TERMAL AVENE FCO",
   "precio": " $ 150.000",
   "descripcion": "Crema hidratante para el cuidado de la piel",
@@ -11,7 +12,8 @@ export const consumoData = [{
   "inventario": 50,
   "carrito": 2
 },
-{
+{ 
+  "id": "2",
   "nombre": "CETAPHIL DERMACONTROL",
   "precio": " $ 80.000",
   "descripcion": "Jabon facial para el control de grasa y poros cerrados",
@@ -24,7 +26,8 @@ export const consumoData = [{
   "inventario": 50,
   "carrito": 1
 },
-{
+{ 
+  "id": "3",
   "nombre": "HYDRABIO SERUM PIEL SECA",
   "precio": " $ 55.000",
   "descripcion": "Serum facial hidratante especial para pieles secas",
@@ -37,7 +40,8 @@ export const consumoData = [{
   "inventario": 10,
   "carrito": 2
 },
-{
+{ 
+  "id": "4",
   "nombre": "MINERAL VICHY CONCENTRADO",
   "precio": " $ 55.000",
   "descripcion": "Serum facial hidratante especial para pieles secas",
@@ -50,7 +54,8 @@ export const consumoData = [{
   "inventario": 60,
   "carrito": 2
 },
-{
+{ 
+  "id": "5",
   "nombre": "MINERAL VICHY CONCENTRADO",
   "precio": " $ 95.000",
   "descripcion": "Serum facial hidratante especial para pieles secas",
@@ -63,7 +68,8 @@ export const consumoData = [{
   "inventario": 50,
   "carrito": 2
 },
-{
+{ 
+  "id": "6",
   "nombre": "NORMADERM GEL VICHY FCO",
   "precio": " $ 110.000",
   "descripcion": "Limpiador facial especial para todo tipo de piel",
@@ -76,7 +82,8 @@ export const consumoData = [{
   "inventario": 20,
   "carrito": 1
 },
-{
+{ 
+  "id": "7",
   "nombre": "NORMADERM GEL VICHY FCO",
   "precio": " $ 89.900",
   "descripcion": "Limpiador facial especial para todo tipo de piel",
@@ -89,7 +96,8 @@ export const consumoData = [{
   "inventario": 40,
   "carrito": 1
 },
-{
+{ 
+  "id": "8",
   "nombre": "NORMADERM GEL VICHY FCO",
   "precio": " $ 69.900",
   "descripcion": "Limpiador facial especial para todo tipo de piel",
