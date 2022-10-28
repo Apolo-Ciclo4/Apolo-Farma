@@ -1,0 +1,53 @@
+.color-links{
+    color: #388659;
+    font-family:  'Open Sans', sans-serif;
+}
+.color-links:hover{
+    color: #7BBC57;
+}
+.btn-outline-warning{
+    color:white ;
+    background-color: #388659;
+    border-color: #388659;
+    font-weight: bold;
+    
+}
+.btn-outline-warning:hover{
+    color: white;
+    background-color: #7BBC57; 
+    border-color: #7BBC57;
+}
+
+.card-text{
+    font-weight: bold;
+    color: #F2A700;
+    font-size: 22px;
+}
+.card {
+    height: 100%;
+  }
+.rating {
+   margin-top: 10rem;
+   font-family:  'Open Sans', sans-serif;
+   font-size: 14px;
+   color: #696868;
+   font-weight: bolder;
+
+  }
+.title{
+    color: #388659;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 30px;    
+    text-align:center;
+}
+.btn-circle.btn-xl {
+    width: 100px;
+    height: 100px;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+ 
+
