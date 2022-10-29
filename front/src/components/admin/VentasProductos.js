@@ -6,11 +6,11 @@ export default function VentasProductos() {
         <Fragment>
             <div className='container mt-5'>
                 <h1 className='title'> Ventas Realizadas</h1>
-                <table class="table mt-4">
+                <table className="table table-hover mt-4">
                     <thead>
-                        <tr>
+                        <tr className='bg-success text-white'>
                             <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
+                            <th scope="col ">Nombre</th>
                             <th scope="col">Precio</th>
                             <th scope="col">Tamaño</th>
                             <th scope="col">Categoria</th>
@@ -21,8 +21,8 @@ export default function VentasProductos() {
                     <tbody>
                     {consumoData && consumoData.map(consumoData => (
                         <tr>
-                            <td>{consumoData.id}</td>
-                            <td>{consumoData.nombre}</td>
+                            <td><b>{consumoData.id}</b></td>
+                            <td >{consumoData.nombre}</td>
                             <td>{consumoData.precio}</td>
                             <td>{consumoData.Tamaño}</td>
                             <td>{consumoData.categoria}</td>
