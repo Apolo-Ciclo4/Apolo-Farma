@@ -21,7 +21,7 @@ const ProducsAdmin = () => {
                             <p><b>Precio:</b> {consumoData.precio}</p>
                         </div>
                         <div className='col  my-0 py-0 '>
-                            <Link to className='btn btn-outline-success mx-2 my-2'>Editar <i className="bi bi-pencil-square"></i></Link>
+                            <Link to={`/admin/update`} className='btn btn-outline-success mx-2 my-2'>Editar <i className="bi bi-pencil-square"></i></Link>
                             <Link to className='btn btn-outline-danger mx-2'>Eliminar <i className="bi bi-trash-fill"></i></Link>
                         </div>
                     </div>
