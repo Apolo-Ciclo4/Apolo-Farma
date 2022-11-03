@@ -43,7 +43,7 @@ const Home = () => {
 
                 <section id='productos' className=' container mt-5  fw-light'>
                     <div className='row justify-content-center height="450" width="450"'>
-                        <h1 className='title' id='Productos faciles'> Cuidado Facial </h1>
+                        <h1 className='title' id='Productos faciles'> Todos nuestros productos </h1>
                         {consumoData && consumoData.map(consumoData => (
                             <div className='col-sm-12 col-md-6 col-lg-3 my-3 fw-light'>
                                 <div className='card p-3 rounded'>
