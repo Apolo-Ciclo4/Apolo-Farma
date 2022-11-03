@@ -30,15 +30,22 @@ exports.getProductsById = catchAsyncErrors(async (req, res, next) => {
 
 //Update un producto
 
-exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
-    let producto = await product.findById(req.params.id) //variable de tipo modficable
-    if (!producto) {
+exports.updateProduct= catchAsyncErrors(async (req,res,next) =>{
+    let producto= await product.findById(req.params.id) //Variable de tipo modificable
+    if (!producto){
         return next(new ErrorHandler("Producto no encontrado", 404))
     }
-    //si elobejto si existe, ejecito la actualizacion
-    producto = await product.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,// valido los atributos nuevos o actualizados
-        runValidators: true
+    
+    //Si el objeto si existia, entonces si ejecuto la actualización
+    producto= await product.findByIdAndUpdate(req.params.id, req.body, {
+        new:true, //Valido solo los atributos nuevos o actualizados
+        runValidators:true
+    });
+    //Respondo Ok si el producto si se actualizó
+    res.status(200).json({
+        success:true,
+        message:"Producto actualizado correctamente",
+        producto
     })
 })
 
