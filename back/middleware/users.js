@@ -2,6 +2,7 @@ const User = require("../models/auth")
 const jwt = require("jsonwebtoken")
 const ErrorHandler = require ("../utils/errorHandler")
 const catchAsyncErrors = require ("../middleware/catchAsyncErrors")
+
 //Verificamossi estamos autenticados, existencia y vericidad token
 exports.isAuthenticatedUser = catchAsyncErrors(async(req, res, next) => {
     const {token} = req.cookies
@@ -13,6 +14,7 @@ exports.isAuthenticatedUser = catchAsyncErrors(async(req, res, next) => {
         next()
     }
 })
+
 //capturamos role 
 exports.authorizeRoles= (...roles) =>{
     return (req, res, next)=>{
