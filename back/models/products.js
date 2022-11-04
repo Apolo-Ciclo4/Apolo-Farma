@@ -18,8 +18,8 @@ const productsSchema = mongoose.Schema({
         required: [true, "Por favor ingrese el nombre del producto. "]
     },
     imagen: [{
-        public_id: { type: String, required: true },
-        url: { type: String, required: true }
+        public_id: { type: String, required: false },
+        url: { type: String, required: false }
     }],
     categoria: {
         type: String,
