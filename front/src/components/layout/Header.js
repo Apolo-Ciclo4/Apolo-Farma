@@ -27,7 +27,9 @@ const Header = () => {
                         </ul>
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a href="" className='btn text-white'><i className="bi bi-person fs-2"></i> <h6 className='fw-light'>Iniciar Sesión</h6></a>
+                                <Link to={`/`} className='btn text-white'><i className="bi bi-person fs-2"></i> <h6 className='fw-light'>Iniciar Sesión</h6></Link>
+                                <Link to={`/admin/view`} className='btn text-white'><i className="bi bi-person-circle fs-2"></i> <h6 className='fw-light'>Administrador</h6></Link>
+
                                 <Link to={`/cart/details`} type="button" className="btn position-relative margin-auto text-white">
                                     <i className="bi bi-cart-plus fs-3"></i>
                                     <span className="position-absolute top-50 start- translate-middle badge rounded-pill bg-danger">
@@ -49,10 +51,10 @@ const Header = () => {
                         </button>
                         <ul className="dropdown-menu fw-light">
                             <li><Link to={`/`} className="dropdown-item fw-light">Alivio del dolor</Link></li>
-                            <li><a className="dropdown-item fw-light" href="#">Sistema Respiratorio</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Metabólicos</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Anticonceptivos</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Salud Digestiva</a></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light" >Sistema Respiratorio</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light" >Metabólicos</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light" >Anticonceptivos</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light" >Salud Digestiva</Link></li>
                         </ul>
                     </div>
                     <div className="btn-group mt-2">
@@ -60,11 +62,11 @@ const Header = () => {
                             Dermocosméticos
                         </button>
                         <ul className="dropdown-menu fw-light">
-                            <li><a className="dropdown-item fw-light" href="#">Protección Solar</a></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Protección Solar</Link></li>
                             <li><Link className="dropdown-item fw-light" to={`/Dermocosmeticos/cuidadofacial`}>Cuidado Facial</Link> </li>
-                            <li><a className="dropdown-item fw-light" href="#">Cuidado de Cabello</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Cuidado Corporal</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Infantil</a></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Cuidado de Cabello</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Cuidado Corporal</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Infantil</Link></li>
                         </ul>
                     </div>
                     <div className="btn-group mt-2">
@@ -72,9 +74,9 @@ const Header = () => {
                             Salud Sexual
                         </button>
                         <ul className="dropdown-menu fw-light">
-                            <li><a className="dropdown-item fw-light" href="#">Alivio del dolor</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Test de Diagnostico</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Tratamiento Testosterona</a></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Alivio del dolor</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Test de Diagnostico</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Tratamiento Testosterona</Link></li>
                         </ul>
                     </div>
                     <div className="btn-group mt-2">
@@ -82,10 +84,10 @@ const Header = () => {
                             Bebé y maternidad
                         </button>
                         <ul className="dropdown-menu fw-light">
-                            <li><a className="dropdown-item fw-light" href="#">Alimentación y lactancia</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Pañales y toallitas humedas</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Salud y Bienestar</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Mamá</a></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Alimentación y lactancia</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Pañales y toallitas humedas</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Salud y Bienestar</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Mamá</Link></li>
                         </ul>
                     </div>
                     <div className="btn-group mt-2">
@@ -93,14 +95,14 @@ const Header = () => {
                             Cuidado Personal
                         </button>
                         <ul className="dropdown-menu fw-light">
-                            <li><a className="dropdown-item fw-light" href="#">Cuidado del Cabello</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Cuidado de la piel</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Higiene personal</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Mamá</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Cuidado Masculino</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Cuidado Femenino</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Higiene Oral</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Afeitada y depilación</a></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Cuidado del Cabello</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Cuidado de la piel</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Higiene personal</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Mamá</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Cuidado Masculino</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Cuidado Femenino</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Higiene Oral</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Afeitada y depilación</Link></li>
                         </ul>
                     </div>
                     <div className="btn-group mt-2">
@@ -108,10 +110,10 @@ const Header = () => {
                             Belleza
                         </button>
                         <ul className="dropdown-menu fw-light">
-                            <li><a className="dropdown-item fw-light" href="#">Cuidado Corporal</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Cuidado del Cabello</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Accesorios</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Maquillaje</a></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Cuidado Corporal</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Cuidado del Cabello</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Accesorios</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Maquillaje</Link></li>
                         </ul>
                     </div>
                     <div className="btn-group mt-2">
@@ -119,10 +121,10 @@ const Header = () => {
                             Bienestar y nutrición
                         </button>
                         <ul className="dropdown-menu fw-light">
-                            <li><a className="dropdown-item fw-light" href="#">Alimentos saludables</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Vitaminas y Minerales</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Suplemetos dietarios</a></li>
-                            <li><a className="dropdown-item fw-light" href="#">Suplemento Nutricional</a></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Alimentos saludables</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Vitaminas y Minerales</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Suplemetos dietarios</Link></li>
+                            <li><Link to={`/`} className="dropdown-item fw-light">Suplemento Nutricional</Link></li>
                         </ul>
                     </div>
                 </nav>
