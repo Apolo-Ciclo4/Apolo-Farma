@@ -1,4 +1,4 @@
-const User = require("../models/auth")
+const User = require("../models/users")
 const jwt = require("jsonwebtoken")
 const ErrorHandler = require ("../utils/errorHandler")
 const catchAsyncErrors = require ("../middleware/catchAsyncErrors")
