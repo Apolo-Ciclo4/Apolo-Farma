@@ -73,3 +73,16 @@ exports.newProduct=catchAsyncErrors(async(req,res,next)=>{
         producto
     })
 })
+
+//listado de productos por stock
+exports.getProductsStock = catchAsyncErrors(async (req, res, next) => {
+    const productos = await product.find({ "inventario" : { $gt: 0}});
+    if (!productos) {
+        return next(new ErrorHandler("No hay productos en Stock", 404))
+    }
+    res.status(200).json({
+        success: true,
+        cantidad: productos.length,       
+        productos
+    })
+})

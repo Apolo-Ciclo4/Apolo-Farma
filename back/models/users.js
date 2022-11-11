@@ -2,6 +2,8 @@ const mongoose = require("mongoose")
 const validator = require("validator")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
+const crypto = require("crypto")
+
 const usersSchema = mongoose.Schema({
     nombre: {
         type: String,
@@ -91,4 +93,5 @@ usersSchema.methods.genResetPasswordToken = function () {
 
     return resetToken
 }
+
 module.exports = mongoose.model("users", usersSchema)
