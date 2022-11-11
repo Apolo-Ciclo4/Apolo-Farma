@@ -74,7 +74,9 @@ exports.updateInventario = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("La venta no está confirmada", 406))
     }
 
-    updateStock()
+    /*no sabemos cual es la sintaxis para pasar los parametros*/
+    updateStock("636d76ab6a30c14828836e32", 1);
+    //updateStock({detalleCompra: {producto: req.producto._id}}, {detalleCompra: {cantidad: req.producto.cantidad}})
 
     res.status(200).json({
         success: true,
