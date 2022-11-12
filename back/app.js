@@ -10,9 +10,11 @@ app.use(cookieParser());
 //Importar rutas
 const productos = require("./routes/products")
 const usuarios = require("./routes/users")
+const ventas = require("./routes/sells")
 
 app.use('/api', productos)
 app.use('/api', usuarios)
+app.use('/api', ventas)
 
 app.use(errorMiddleware)
 
