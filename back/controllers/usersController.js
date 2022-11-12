@@ -6,6 +6,7 @@ const sendEmail = require("../utils/sendEmail")
 const crypto = require("crypto")
 
 //Regitrar un nuevo usuario /api/users/new
+//Ruta: localhost:4000/api/users/new
 exports.registroUsuario = catchAsyncErrors(async (req, res, next) => {
     const { nombre, email, password, role, celular, departamento, ciudad, direccion } = req.body;
 
@@ -25,7 +26,27 @@ exports.registroUsuario = catchAsyncErrors(async (req, res, next) => {
     })
     tokenEnviado(user, 201, res)
 })
+/*JSON PARA CREAR UN USUARIO NUEVO:
+{
+    "nombre": " Carlos Perez",
+    "email": "perez@gmail.com",
+    "password": "123456789",	
+    "photoPerfil": [{
+        "public_id": "123456789sertyu",
+        "url" : "https://cdn.pixabay.com/photo/2021/06/07/13/46/user-6318008_960_720.png"
+       }],
+    "role": "admin",
+    "celular": "3105675256",
+    "departamento": "boyaca",
+    "ciudad": "belen",
+    "direccion": "calle 8#6-28"	
+}
+*/
+
+
 //Iniciar Sesion - Login
+//Ruta: localhost:4000/api/user/login
+//Se debe enviar el user y la pass
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {
     const { email, password } = req.body;
 
@@ -52,6 +73,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 })
 
 //Cerrar Sesion (logout)
+//Ruta: localhost:4000/api/user/logout
 exports.logOut = catchAsyncErrors(async (req, res, next) => {
     res.cookie("token", null, {
         expires: new Date(Date.now()),
@@ -100,6 +122,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
         return next(new errorHandler(error.message, 500))
     }
 })
+
 //Resetear la contraseña
 exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
     //Hash el token que llego con la URl
@@ -126,6 +149,7 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
     await user.save();
     tokenEnviado(user, 200, res)
 })
+
 //ver datos de usuario estando logueado
 exports.getUserProfile = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req.user.id);
@@ -161,7 +185,7 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
 
     //updata Avatar: pendiente
 
-//Actualizar datos estando logueado
+    //Actualizar datos estando logueado
 
     const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
         new: true,
@@ -175,19 +199,19 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
 })
 
 //Ver todos los usuarios
-exports.getAllUsers = catchAsyncErrors(async(req, res, next)=>{
+exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
     const users = await User.find();
 
     res.status(200).json({
-        success:true,
+        success: true,
         users
     })
 })
 //Eliminar usuario (admin)
-exports.deleteUser= catchAsyncErrors (async (req, res, next)=>{
+exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req.params.id);
 
-    if(!user){
+    if (!user) {
         return next(new errorHandler(`Usuario con id: ${req.params.id} 
         no se encuentra en nuestra base de datos`))
     }
@@ -195,7 +219,7 @@ exports.deleteUser= catchAsyncErrors (async (req, res, next)=>{
     await user.remove();
 
     res.status(200).json({
-        success:true,
-        message:"Usuario eliminado correctamente"
+        success: true,
+        message: "Usuario eliminado correctamente"
     })
 })
