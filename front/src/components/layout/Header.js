@@ -27,7 +27,7 @@ const Header = () => {
                         </ul>
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link to={`/`} className='btn text-white'><i className="bi bi-person fs-2"></i> <h6 className='fw-light'>Iniciar Sesión</h6></Link>
+                                <Link to={`/login`} className='btn text-white'><i className="bi bi-person fs-2"></i> <h6 className='fw-light'>Iniciar Sesión</h6></Link>
                                 <Link to={`/admin/view`} className='btn text-white'><i className="bi bi-person-circle fs-2"></i> <h6 className='fw-light'>Administrador</h6></Link>
 
                                 <Link to={`/cart/details`} type="button" className="btn position-relative margin-auto text-white">
