@@ -4,7 +4,7 @@ const { registroUsuario, loginUser, logOut, forgotPassword, resetPassword, getUs
 const { isAuthenticatedUser } = require("../middleware/users");
 
 router.route('/user/new').post(registroUsuario);
-router.route('/user/login').get(loginUser)
+router.route('/login').post(loginUser)
 router.route('/user/logout').get(logOut)
 router.route('/user/forgotpassword').post(forgotPassword)
 router.route('/resetPassword/:token').post(resetPassword)

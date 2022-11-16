@@ -70,12 +70,31 @@ exports.confirmSell = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler("Venta no encontrada", 404))
     }
 
+    if(sell.statusConfirm === true){
+        return next(new ErrorHandler("Esta venta ya se encuentra confirmada", 400))
+    }
+
     sell.statusConfirm = req.body.statusConfirm;
     await sell.save()
 
     res.status(200).json({
         success: true,
         sell
+    })
+})
+
+//Eliminar compra
+exports.deleteSell = catchAsyncErrors(async(req,res,next)=>{
+    const sell= await Sells.findById(req.params.id)
+
+    if (!sell){
+        return next(new ErrorHandler("Producto no encontrado", 404))
+    }
+
+    await sell.remove();//Eliminamos el proceso
+    res.status(200).json({
+        success:true,
+        message:"Producto eliminado del carrito correctamente"
     })
 })
 
