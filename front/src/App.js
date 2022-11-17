@@ -15,11 +15,12 @@ import { Login } from './components/user/Login';
 import { useEffect } from 'react';
 import store from "./store"
 import { loadUser } from './actions/userAction';
+import { Register } from './components/user/Register';
 
 function App() {
-  useEffect(() => {
-    store.dispatch(loadUser())
-  }, [])
+  // useEffect(() => {
+  //   store.dispatch(loadUser())
+  // }, [])
 
   return (
     <Router>
@@ -35,7 +36,8 @@ function App() {
           <Route path='/admin/newproduct' element={<CreateProduct />} />
           <Route path='/admin/view' element={<ViewAdmin />} />
           <Route path='/admin/update' element={<UpdateProduct />} />
-          <Route path='/login' element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/newuser" element={<Register/>}/>
         </Routes>
         <br></br>
         <Footer></Footer>

@@ -2,13 +2,15 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import { login, clearErrors } from "../../actions/userAction"
 import { useDispatch, useSelector } from 'react-redux'
+import { useAlert } from 'react-alert'
 
 export const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const dispatch = useDispatch()
-    const { isAuthenticated, error } = useSelector(state => state.user)
+    const { isAuthenticated, error, loading } = useSelector(state => state.auth)
+    const alert = useAlert;
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -26,7 +28,7 @@ export const Login = () => {
     return (
         <Fragment>
             <div className='py-4 mt-4 container d-flex justify-content-center' >
-                <form className='py-5 px-5 mx-5 shadow-lg w-75' onSubmit={submitHandler}>
+                <form className='py-5 px-5 mx-5 shadow-lg w-75' onSubmit={submitHandler} encType='application/json'>
                     <h1 className='title'>Iniciar Sesión</h1>
                     <div className='row'>
                         <div className='col' >
@@ -44,7 +46,7 @@ export const Login = () => {
                     <div className='row'>
                         <div className='col'>
                             <label className='pt-3 fw-light form-label'><i class="bi bi-lock fs-5"></i> Password*</label>
-                            <input type='password' name='pass' required className='fw-light form-control' id='number'
+                            <input type='password' name='pass' required className='fw-light form-control' id='text'
                                 aria-describedby='emailHelp' placeholder='Ingrese su contraseña'
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
