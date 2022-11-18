@@ -72,7 +72,7 @@ const Header = () => {
                                         </Link>
                                     )}
                                     {user && user.role === "admin" && (
-                                        <Link to={`/producto/nuevo`} className='btn text-white'>
+                                        <Link to={`/dashboard`} className='btn text-white'>
                                             <i class="bi bi-speedometer2 fs-2"></i>
                                             <h6 className='fw-light'>Dashboard</h6></Link>
 

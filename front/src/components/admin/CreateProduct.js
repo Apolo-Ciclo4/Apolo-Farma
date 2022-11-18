@@ -85,8 +85,6 @@ export const CreateProduct = () => {
         })
     }
     return (
-
-
         <Fragment>
             <div className='py-4 mt-5 container' >
                 <form className='py-4 px-5 mx-5 shadow-lg' onSubmit={submitHandler} encType='application/json'>

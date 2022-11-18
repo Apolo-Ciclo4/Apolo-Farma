@@ -19,7 +19,7 @@ export const ViewAdmin = () => {
                             <div className="card" data-aos="zoom-in-up" data-aos-duration="4000">
                                 <img src="../images/icons/add.jpg" className="card-img-top " alt="Registrar"></img>
                                 <div className="card-body">
-                                    <Link to={`/admin/newproduct`} className="card-title btn btn-outline-success text-center w-100">Agregar un producto</Link>
+                                    <Link to={`/producto/nuevo`} className="card-title btn btn-outline-success text-center w-100">Agregar un producto</Link>
                                 </div>
                             </div>
                         </div>
@@ -27,7 +27,7 @@ export const ViewAdmin = () => {
                             <div className="card" data-aos="zoom-in-up" data-aos-duration="3000">
                                 <img src="../images/icons/list.jpg" className="card-img-top" alt="..."></img>
                                 <div className="card-body">
-                                    <Link to={`/admin/products`} className="card-title btn btn-outline-success text-center w-100">Productos Creados</Link>
+                                    <Link to={`/allProducts`} className="card-title btn btn-outline-success text-center w-100">Productos Creados</Link>
                                 </div>
                             </div>
                         </div>
