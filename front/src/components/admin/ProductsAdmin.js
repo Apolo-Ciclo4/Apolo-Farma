@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom';
 import { consumoData } from '../json/consumoData';
 
-const ProducsAdmin = () => {
+const ProductsAdmin = () => {
     return (
         <Fragment>
             <div className='container my-5 fw-light'>
@@ -31,4 +31,4 @@ const ProducsAdmin = () => {
     )
 }
 
-export default ProducsAdmin
+export default ProductsAdmin

@@ -6,16 +6,14 @@ import Home from './components/Home';
 import CuidadoFacial from './components/layout/CuidadoFacial';
 import Carrito from './components/carrito/Carrito';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProducsAdmin from './components/admin/ProducsAdmin';
+import ProducsAdmin from './components/admin/ProductsAdmin';
 import VentasProductos from './components/admin/VentasProductos';
 import { CreateProduct } from './components/admin/CreateProduct';
 import { ViewAdmin } from './components/admin/ViewAdmin';
 import { UpdateProduct } from './components/admin/UpdateProduct';
 import { Login } from './components/user/Login';
-import { useEffect } from 'react';
-import store from "./store"
-import { loadUser } from './actions/userAction';
 import { Register } from './components/user/Register';
+import { ProductsList } from './components/admin/ProductsList';
 
 function App() {
   // useEffect(() => {
@@ -39,6 +37,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/newuser" element={<Register/>}/>
           <Route path="/producto/nuevo" element={<CreateProduct/>}/>
+          <Route path="/dashboard" element={<ViewAdmin/>}/>
+          <Route path="/allProducts" element={<ProductsList/>}/>
+          <Route path="/updateProduct/:id" element={<UpdateProduct/>}/>
         </Routes>
         <br></br>
         <Footer></Footer>
