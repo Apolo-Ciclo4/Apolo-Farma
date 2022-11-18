@@ -14,6 +14,7 @@ import { UpdateProduct } from './components/admin/UpdateProduct';
 import { Login } from './components/user/Login';
 import { Register } from './components/user/Register';
 import { ProductsList } from './components/admin/ProductsList';
+import { ProductDetails } from './components/products/ProductDetails';
 
 function App() {
   // useEffect(() => {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/dashboard" element={<ViewAdmin/>}/>
           <Route path="/allProducts" element={<ProductsList/>}/>
           <Route path="/updateProduct/:id" element={<UpdateProduct/>}/>
+          <Route path="/producto/:id" element={<ProductDetails/>} />
         </Routes>
         <br></br>
         <Footer></Footer>

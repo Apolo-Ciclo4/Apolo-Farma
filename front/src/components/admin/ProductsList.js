@@ -67,7 +67,7 @@ export const ProductsList = () => {
                 inventario: product.inventario,
                 vendedor: product.vendedor,
                 acciones: <Fragment>
-                    <Link to="" className="btn btn-outline-success py-1 mx-1">
+                    <Link to={`/producto/${product._id}`} className="btn btn-outline-success py-1 mx-1">
                     <i class="bi bi-eye"></i>
                     </Link>
                     <Link to={`/updateProduct/${product._id}`} className="btn btn-outline-primary py-1 mx-1">

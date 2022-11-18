@@ -1,4 +1,4 @@
-const express=require("express")
+const express=require("express");
 const router=express.Router();
 
 const {getProducts, newProduct, getProductsById, updateProduct, deleteProduct, getProductsStock, getAdminProducts} = require("../controllers/productsController"); //Traemos la respuesta json desde el controlador
@@ -11,6 +11,7 @@ router.route('/producto/:id').get(getProductsById); //Ruta para consultar por id
 
 router.route('/producto/:id').delete(deleteProduct); //Creacion de la ruta de eliminacion por id
 router.route('/admon/inventario').get(isAuthenticatedUser, getProductsStock)
+
  
 router.route('/producto/:id').put(isAuthenticatedUser, updateProduct);//Creacion de la ruta de actualizacion
 router.route('/admin/productos').get(isAuthenticatedUser,getAdminProducts); //establecemos la ruta

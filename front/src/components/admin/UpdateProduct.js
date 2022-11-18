@@ -178,7 +178,7 @@ export const UpdateProduct = () => {
                         <div className='col'>
                             <label className='pt-3 fw-light form-label'><i className='bi bi-tags'></i> Vendedor*</label>
                             <input type='text' name='vendedor' required className='fw-light form-control w-100' id='contrasena'
-                                aria-describedby='emailHelp' placeholder='Ejm: 70 ML' 
+                                aria-describedby='emailHelp' placeholder='Ejm: 70 ML'
                                 value={vendedor}
                                 onChange={(e) => setVendedor(e.target.value)}></input>
                         </div>
