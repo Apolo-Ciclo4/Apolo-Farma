@@ -38,6 +38,7 @@ function App() {
           <Route path='/admin/update' element={<UpdateProduct />} />
           <Route path="/login" element={<Login />} />
           <Route path="/newuser" element={<Register/>}/>
+          <Route path="/producto/nuevo" element={<CreateProduct/>}/>
         </Routes>
         <br></br>
         <Footer></Footer>

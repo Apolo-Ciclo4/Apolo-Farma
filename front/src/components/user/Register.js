@@ -37,10 +37,7 @@ export const Register = () => {
     }
 
     const onChange = e => {
-
         setUser({ ...user, [e.target.name]: e.target.value })
-
-
     }
 
     return (

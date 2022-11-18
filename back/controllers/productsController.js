@@ -1,6 +1,7 @@
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const product = require("../models/products");
 const ErrorHandler = require("../utils/errorHandler");
+const cloudinary=require("cloudinary")
 
 //listado de productos//
 //Ruta: localhost:4000/api/productos
@@ -70,8 +71,29 @@ exports.deleteProduct= catchAsyncErrors(async (req,res,next) =>{
 //Crear nuevo producto /api/productos
 //Ruta: localhost:4000/api//producto/nuevo
 exports.newProduct=catchAsyncErrors(async(req,res,next)=>{
-    //req.body.user=req.user.id;
+    let imagen=[]
+    if(typeof req.body.imagen==="string"){
+        imagen.push(req.body.imagen)
+    }else{
+        imagen=req.body.imagen
+    }
+
+    let imagenLink=[]
+
+    for (let i=0; i<imagen.length;i++){
+        const result = await cloudinary.v2.uploader.upload(imagen[i],{
+            folder:"products"
+        })
+        imagenLink.push({
+            public_id:result.public_id,
+            url: result.secure_url
+        })
+    }
+    req.body.imagen=imagenLink
+    req.body.user = req.user.id;
+
     const producto= await product.create(req.body);
+    
     res.status(201).json({
         success:true,
         producto
