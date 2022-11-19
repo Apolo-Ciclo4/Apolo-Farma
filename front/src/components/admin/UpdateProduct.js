@@ -50,7 +50,6 @@ export const UpdateProduct = () => {
             setInventario(product.inventario);
             setOldImagen(product.imagen)
         }
-
         if (error) {
             alert.error(error)
             dispatch(clearErrors)
@@ -94,7 +93,8 @@ export const UpdateProduct = () => {
 
     const submitHandler = (e) => {
         //console.log("Mostrando el ", productId)
-        alert.success("Actualizado Correctamente")
+       
+        alert.success("Actualizado Correctamente")      
         e.preventDefault();
 
         const formData = new FormData();
@@ -136,7 +136,7 @@ export const UpdateProduct = () => {
     return (
         <Fragment>
             <div className='py-4 mt-5 container' >
-                <form onSubmit={submitHandler} className='py-4 px-5 mx-5 shadow-lg'  encType='application/json'>
+                <form onSubmit={submitHandler} className='py-4 px-5 mx-5 shadow-lg' encType='application/json'>
                     <h1 className='title'>Crear un nuevo producto</h1>
                     <p className='pt-3 text-muted fst-italic'>Por favor ingrese los siguientes datos, recuerde que todos
                         son obligatorios.</p>
@@ -219,10 +219,10 @@ export const UpdateProduct = () => {
                     <div className='pt-4 row text-center'>
                         <div className='col'>
 
-                            <button type='submit'  className='btn btn-outline-success w-75 text-center'
+                            <button type='submit' className='btn btn-outline-success w-75 text-center'
                                 name='actualizar'> Actualizar
                             </button>
-                            
+
                         </div>
                     </div>
                 </form >

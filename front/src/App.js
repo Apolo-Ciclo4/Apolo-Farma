@@ -15,12 +15,13 @@ import { Login } from './components/user/Login';
 import { Register } from './components/user/Register';
 import { ProductsList } from './components/admin/ProductsList';
 import { ProductDetails } from './components/products/ProductDetails';
+import { useSelector } from 'react-redux';
 
 function App() {
   // useEffect(() => {
   //   store.dispatch(loadUser())
   // }, [])
-
+  //const { user, isAuthenticated, loading } = useSelector(state => state.auth)
   return (
     <Router>
       <div className="App">
@@ -36,15 +37,19 @@ function App() {
           <Route path='/admin/view' element={<ViewAdmin />} />
           <Route path='/admin/update' element={<UpdateProduct />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/newuser" element={<Register/>}/>
-          <Route path="/producto/nuevo" element={<CreateProduct/>}/>
-          <Route path="/dashboard" element={<ViewAdmin/>}/>
-          <Route path="/allProducts" element={<ProductsList/>}/>
-          <Route path="/updateProduct/:id" element={<UpdateProduct/>}/>
-          <Route path="/producto/:id" element={<ProductDetails/>} />
+          <Route path="/newuser" element={<Register />} />
+          <Route path="/producto/nuevo" element={<CreateProduct />} />
+          <Route path="/dashboard" element={<ViewAdmin />} />
+          <Route path="/allProducts" element={<ProductsList />} />
+          <Route path="/updateProduct/:id" element={<UpdateProduct />} />
+          <Route path="/producto/:id" element={<ProductDetails />} />
         </Routes>
         <br></br>
-        <Footer></Footer>
+        <Footer>
+       // {!loading && (!isAuthenticated || user.role !== "admin") && ( <h1></h1> )}
+
+        </Footer>
+         
       </div>
     </Router>
   );
