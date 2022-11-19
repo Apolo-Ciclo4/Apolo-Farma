@@ -38,7 +38,7 @@ const productsSchema = mongoose.Schema({
     vendedor: {
         type: String,
         required: [
-            true, "Ingrese el nombre del Vendedor"
+            false, "Ingrese el nombre del Vendedor"
         ]
     },
     inventario: {
