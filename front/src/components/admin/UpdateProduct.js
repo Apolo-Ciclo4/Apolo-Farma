@@ -20,6 +20,8 @@ export const UpdateProduct = () => {
     const [imagenPreview, setImagenPreview] = useState([])
     const [oldImagen, setOldImagen] = useState([])
 
+    
+
     const categorias = [
         "Medicamentos",
         "Dermocosmeticos",
@@ -31,41 +33,61 @@ export const UpdateProduct = () => {
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, isUpdated, error: updateError } = useSelector(state => state.product)
+    const { loading, isUpdated, error: updateError, success } = useSelector(state => state.product)
     const { error, product } = useSelector(state => state.productDetails)
     const productId = params.id;
 
+    // useEffect(() => {
+        
+    //     if (product && product._id !== productId) {
+    //         dispatch(getProductDetails(productId));
+    //     }
+    //      else {
+            
+    //         setNombre(product.nombre);
+    //         setPrecio(product.precio);
+    //         setDescripcion(product.descripcion);
+    //         setCategoria(product.categoria);
+    //         setVendedor(product.vendedor);
+    //         setInventario(product.inventario);
+    //         setOldImagen(product.imagen)
+    //     }
+        
+    //     if (error) {
+    //         alert.error(error)
+    //         dispatch(clearErrors)
+    //     }
+    //     if (updateError) {
+    //         alert.error(error)
+    //         dispatch(clearErrors)
+    //     }
+    //     if (isUpdated) {
+    //         alert.success("Producto actualizado correctamente");
+    //         navigate("/")
+    //         dispatch({ type: UPDATE_PRODUCT_RESET })
+    //     }
+    //     console.log("Mostrando el id despues del else")
+    // }, [dispatch, alert, error, isUpdated, updateError, product, productId])
+
     useEffect(() => {
-        if (product && product._id !== productId) {
-            dispatch(getProductDetails(productId));
-        } else {
-            setNombre(product.nombre);
-            setPrecio(product.precio);
-            setDescripcion(product.descripcion);
-            setCategoria(product.categoria);
-            setVendedor(product.vendedor);
-            setInventario(product.inventario);
-            setOldImagen(product.imagen)
-        }
+
         if (error) {
-            alert.error(error)
-            dispatch(clearErrors)
+            alert.error(error);
+            dispatch(clearErrors())
         }
-        if (updateError) {
-            alert.error(error)
-            dispatch(clearErrors)
-        }
-        if (isUpdated) {
-            alert.success("Producto actualizado correctamente");
-            navigate("/")
+
+        if (success) {
+            navigate('/');
+            alert.success('Product updated successfully');
             dispatch({ type: UPDATE_PRODUCT_RESET })
         }
 
-    }, [dispatch, alert, error, isUpdated, updateError, product, productId])
+    }, [dispatch, alert, error, success])
 
     const submitHandler = (e) => {
+        console.log("Mostrando el ", productId)
         e.preventDefault();
-
+        
         const formData = new FormData();
         formData.set('nombre', nombre);
         formData.set('precio', precio);
@@ -77,8 +99,8 @@ export const UpdateProduct = () => {
         imagen.forEach(img => {
             formData.append('imagen', img)
         })
-
-        dispatch(updateProduct(product._id, formData))
+        
+        dispatch(updateProduct(productId, formData))
     }
 
     const onChange = e => {
@@ -106,10 +128,9 @@ export const UpdateProduct = () => {
         <Fragment>
             <div className='py-4 mt-5 container' >
                 <form className='py-4 px-5 mx-5 shadow-lg' onSubmit={submitHandler} encType='application/json'>
-                    <h1 className='title'>Modificar un producto</h1>
+                    <h1 className='title'>Crear un nuevo producto</h1>
                     <p className='pt-3 text-muted fst-italic'>Por favor ingrese los siguientes datos, recuerde que todos
                         son obligatorios.</p>
-
                     <div className='row '>
                         <div className='col'>
                             <label className='pt-3 fw-light form-label'><i className='bi bi-bag-plus-fill'></i> Nombre del producto*</label>
@@ -135,8 +156,6 @@ export const UpdateProduct = () => {
                                 onChange={(e) => setInventario(e.target.value)}></input>
                         </div>
                         <div className='col'>
-                            <label className='pt-3 fw-light form-label'>
-                                <i className='bi bi-paperclip'></i> Seleccionar Imagen*</label>
                             <label>Imágenes</label>
 
                             <div className='custom-file'>
@@ -153,32 +172,21 @@ export const UpdateProduct = () => {
                                 </label>
                             </div>
 
-                            {oldImagen && oldImagen.map(img => (
-                                <img key={img} src={img.url} alt={img.url} className="mt-3 mr-2" width="55" height="52" />
-                            ))}
-
-                            {imagenPreview.map(img => (
-                                <img src={img} key={img} alt="Vista Previa" className="mt-3 mr-2" width="55" height="52" />
-                            ))}
+                            
                         </div>
                     </div>
                     <div className='row'>
                         <div className='col'>
                             <label className='pt-3 fw-light form-label'><i className='bi bi-tags'></i> Categoria*</label>
-                            <select className="form-control"
-                                id="category_field"
+                            <input type='text' name='contenido' required className='fw-light form-control w-100' id='contrasena'
+                                aria-describedby='emailHelp' placeholder='Ejm: Pepito Perez'
                                 value={categoria}
-                                onChange={(e) => setCategoria(e.target.value)}>
-                                {categorias.map(categoria => (
-                                    <option key={categoria} value={categoria} >{categoria}</option>
-                                ))}
-
-                            </select>
+                                onChange={(e) => setCategoria(e.target.value)}></input>
                         </div>
                         <div className='col'>
                             <label className='pt-3 fw-light form-label'><i className='bi bi-tags'></i> Vendedor*</label>
-                            <input type='text' name='vendedor' required className='fw-light form-control w-100' id='contrasena'
-                                aria-describedby='emailHelp' placeholder='Ejm: 70 ML'
+                            <input type='text' name='contenido' required className='fw-light form-control w-100' id='contrasena'
+                                aria-describedby='emailHelp' placeholder='Ejm: Pepito Perez'
                                 value={vendedor}
                                 onChange={(e) => setVendedor(e.target.value)}></input>
                         </div>
@@ -186,19 +194,20 @@ export const UpdateProduct = () => {
                     <div className='row'>
                         <div className='col'>
                             <label className='pt-3 fw-light form-label'><i className='bi bi-pencil'></i> Descripción*</label>
-                            <textarea className='form-control rounded-3 fw-light' id='exampleFormControlTextarea1'
-                                rows='3' maxLength='150' value={descripcion}
+                            <textarea className='form-control rounded-3 fw-light' id='exampleFormControlTextarea1' rows='3'
+                                maxLength='150'
+                                value={descripcion}
                                 onChange={(e) => setDescripcion(e.target.value)}></textarea>
                         </div>
                     </div>
                     <div className='pt-4 row text-center'>
                         <div className='col'>
-                            <input type='button' value='Actualizar' className='btn btn-outline-success w-75 text-center'
-                                name='guardar'></input>
+                            <input type='submit' value='Guardar' className='btn btn-outline-success w-75 text-center'
+                                name='guardar' ></input>
                         </div>
                     </div>
                 </form >
             </div>
-        </Fragment>
+        </Fragment >
     )
 }
