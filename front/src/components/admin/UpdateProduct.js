@@ -20,8 +20,6 @@ export const UpdateProduct = () => {
     const [imagenPreview, setImagenPreview] = useState([])
     const [oldImagen, setOldImagen] = useState([])
 
-    
-
     const categorias = [
         "Medicamentos",
         "Dermocosmeticos",
@@ -33,61 +31,72 @@ export const UpdateProduct = () => {
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, isUpdated, error: updateError, success } = useSelector(state => state.product)
+    const { loading, error: updateError, success } = useSelector(state => state.product)
     const { error, product } = useSelector(state => state.productDetails)
     const productId = params.id;
 
+    useEffect(() => {
+
+        if (product && product._id !== productId) {
+            dispatch(getProductDetails(productId));
+        }
+        else {
+
+            setNombre(product.nombre);
+            setPrecio(product.precio);
+            setDescripcion(product.descripcion);
+            setCategoria(product.categoria);
+            setVendedor(product.vendedor);
+            setInventario(product.inventario);
+            setOldImagen(product.imagen)
+        }
+
+        if (error) {
+            alert.error(error)
+            dispatch(clearErrors)
+        }
+        if (updateError) {
+            alert.error(error)
+            dispatch(clearErrors)
+        }
+        if (success) {
+            alert.success("Producto actualizado correctamente");
+            navigate("/dashboard")
+            dispatch({ type: UPDATE_PRODUCT_RESET })
+        }
+        // console.log("Mostrando el id despues del else")
+    }, [dispatch, alert, error, updateError, product, productId])
+    ///////////////////////////////////////////////////////////////
     // useEffect(() => {
-        
-    //     if (product && product._id !== productId) {
+    //     if (product && product._id !==productId){
     //         dispatch(getProductDetails(productId));
-    //     }
-    //      else {
-            
+    //     }else{
     //         setNombre(product.nombre);
-    //         setPrecio(product.precio);
+    //         setPrecio(product.precio); 
     //         setDescripcion(product.descripcion);
-    //         setCategoria(product.categoria);
+    //         setCategoria(product.categoria); 
     //         setVendedor(product.vendedor);
     //         setInventario(product.inventario);
     //         setOldImagen(product.imagen)
     //     }
-        
     //     if (error) {
-    //         alert.error(error)
-    //         dispatch(clearErrors)
+    //         alert.error(error);
+    //         dispatch(clearErrors())
     //     }
-    //     if (updateError) {
-    //         alert.error(error)
-    //         dispatch(clearErrors)
-    //     }
-    //     if (isUpdated) {
-    //         alert.success("Producto actualizado correctamente");
-    //         navigate("/")
+
+    //     if (success) {         
+    //         alert.success('Product updated successfully');
+    //         navigate('/dashboard');
     //         dispatch({ type: UPDATE_PRODUCT_RESET })
     //     }
-    //     console.log("Mostrando el id despues del else")
-    // }, [dispatch, alert, error, isUpdated, updateError, product, productId])
 
-    useEffect(() => {
-
-        if (error) {
-            alert.error(error);
-            dispatch(clearErrors())
-        }
-
-        if (success) {
-            navigate('/');
-            alert.success('Product updated successfully');
-            dispatch({ type: UPDATE_PRODUCT_RESET })
-        }
-
-    }, [dispatch, alert, error, success])
+    // }, [dispatch, alert, error, success])
 
     const submitHandler = (e) => {
-        console.log("Mostrando el ", productId)
+        //console.log("Mostrando el ", productId)
+        alert.success("Actualizado Correctamente")
         e.preventDefault();
-        
+
         const formData = new FormData();
         formData.set('nombre', nombre);
         formData.set('precio', precio);
@@ -99,7 +108,7 @@ export const UpdateProduct = () => {
         imagen.forEach(img => {
             formData.append('imagen', img)
         })
-        
+
         dispatch(updateProduct(productId, formData))
     }
 
@@ -127,7 +136,7 @@ export const UpdateProduct = () => {
     return (
         <Fragment>
             <div className='py-4 mt-5 container' >
-                <form className='py-4 px-5 mx-5 shadow-lg' onSubmit={submitHandler} encType='application/json'>
+                <form onSubmit={submitHandler} className='py-4 px-5 mx-5 shadow-lg'  encType='application/json'>
                     <h1 className='title'>Crear un nuevo producto</h1>
                     <p className='pt-3 text-muted fst-italic'>Por favor ingrese los siguientes datos, recuerde que todos
                         son obligatorios.</p>
@@ -171,8 +180,15 @@ export const UpdateProduct = () => {
                                     Seleccione Imágenes
                                 </label>
                             </div>
+                            {oldImagen && oldImagen.map(img => (
+                                <img key={img} src={img.url} alt={img.url} className="mt-3 mr-2" width="55" height="52" />
+                            ))}
 
-                            
+                            {imagenPreview.map(img => (
+                                <img src={img} key={img} alt="Vista Previa" className="mt-3 mr-2" width="55" height="52" />
+                            ))}
+
+
                         </div>
                     </div>
                     <div className='row'>
@@ -202,12 +218,16 @@ export const UpdateProduct = () => {
                     </div>
                     <div className='pt-4 row text-center'>
                         <div className='col'>
-                            <input type='submit' value='Guardar' className='btn btn-outline-success w-75 text-center'
-                                name='guardar' ></input>
+
+                            <button type='submit'  className='btn btn-outline-success w-75 text-center'
+                                name='actualizar'> Actualizar
+                            </button>
+                            
                         </div>
                     </div>
                 </form >
             </div>
         </Fragment >
+
     )
 }
