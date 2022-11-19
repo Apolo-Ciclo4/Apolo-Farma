@@ -17,11 +17,8 @@ import { ProductsList } from './components/admin/ProductsList';
 import { ProductDetails } from './components/products/ProductDetails';
 import { useSelector } from 'react-redux';
 
-function App() {
-  // useEffect(() => {
-  //   store.dispatch(loadUser())
-  // }, [])
-  //const { user, isAuthenticated, loading } = useSelector(state => state.auth)
+function App() { 
+  
   return (
     <Router>
       <div className="App">
@@ -45,8 +42,7 @@ function App() {
           <Route path="/producto/:id" element={<ProductDetails />} />
         </Routes>
         <br></br>
-        <Footer>
-       // {!loading && (!isAuthenticated || user.role !== "admin") && ( <h1></h1> )}
+        <Footer>     
 
         </Footer>
          
