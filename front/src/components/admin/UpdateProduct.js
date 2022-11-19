@@ -20,18 +20,10 @@ export const UpdateProduct = () => {
     const [imagenPreview, setImagenPreview] = useState([])
     const [oldImagen, setOldImagen] = useState([])
 
-    const categorias = [
-        "Medicamentos",
-        "Dermocosmeticos",
-        "Salud Sexual",
-        "Bebe y Maternidad",
-        "Cuidado Personal"
-    ]
-
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, error: updateError, success } = useSelector(state => state.product)
+    const { error: updateError, success } = useSelector(state => state.product)
     const { error, product } = useSelector(state => state.productDetails)
     const productId = params.id;
 
