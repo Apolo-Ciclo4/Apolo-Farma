@@ -50,8 +50,8 @@ exports.updateProduct= catchAsyncErrors(async (req,res,next) =>{
     }
     if (imagen!== undefined){
         //eliminar imagenes asociadas con el product
-        for (let i=0; i<product.imagen.lenght; i++){
-            const result= await cloudinary.v2.uploader.destroy(product.images[i].public_id)
+        for (let i=0; i<producto.imagen.lenght; i++){
+            const result= await cloudinary.v2.uploader.destroy(producto.images[i].public_id)
         }
 
         let imageLinks=[]
@@ -68,11 +68,17 @@ exports.updateProduct= catchAsyncErrors(async (req,res,next) =>{
     }
 
     //Si el objeto si existia, entonces si ejecuto la actualización
+    console.log("req.params ",req.params.id)
+    console.log("req body", req.body)
     producto= await product.findByIdAndUpdate(req.params.id, req.body, {
         new:true, //Valido solo los atributos nuevos o actualizados
         runValidators:true
     });
     
+    // if(res.status!==200){
+    //     console.log("error al actualizar", error) 
+    // }
+
     //Respondo Ok si el producto si se actualizó
     res.status(200).json({
         success:true,
