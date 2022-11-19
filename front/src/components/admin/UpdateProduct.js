@@ -86,7 +86,9 @@ export const UpdateProduct = () => {
     const submitHandler = (e) => {
         //console.log("Mostrando el ", productId)
        
-        alert.success("Actualizado Correctamente")      
+        alert.success("Actualizado Correctamente")   
+        navigate("/dashboard")
+        dispatch({ type: UPDATE_PRODUCT_RESET })
         e.preventDefault();
 
         const formData = new FormData();
