@@ -1,7 +1,23 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+import { useAlert } from 'react-alert'
+import { logout } from '../../actions/userAction';
+
 
 const Header = () => {
+
+
+    const alert = useAlert();
+    const dispatch = useDispatch();
+
+    const { user, loading } = useSelector(state => state.auth)
+
+    const logoutHandler = () => {
+        dispatch(logout());
+        alert.success("Sesión finalizada")//alerta de sesión cerrada exitosamente
+        window.load.refresh()//recarga la pagina
+    }
     return (
         <Fragment>
             <nav className="navbar navbar-expand-lg navbar-light fixed-top fw-light text-white" style={{ background: "#388659" }}>
@@ -25,21 +41,48 @@ const Header = () => {
                                 </form>
                             </li>
                         </ul>
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <Link to={`/`} className='btn text-white'><i className="bi bi-person fs-2"></i> <h6 className='fw-light'>Iniciar Sesión</h6></Link>
-                                <Link to={`/admin/view`} className='btn text-white'><i className="bi bi-person-circle fs-2"></i> <h6 className='fw-light'>Administrador</h6></Link>
+                        {/* se valida que no haya ningun usuario logueado y se muestra esto:*/}
+                        {user && user.role == null && (
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <Link to={`/newuser`} className='btn text-white'><i className="bi bi-person fs-2"></i> <h6 className='fw-light'>Registrate</h6></Link>
+                                    <Link to={`/login`} className='btn text-white'><i className="bi bi-person-circle fs-2"></i> <h6 className='fw-light'>Iniciar Sesión</h6></Link>
 
-                                <Link to={`/cart/details`} type="button" className="btn position-relative margin-auto text-white">
-                                    <i className="bi bi-cart-plus fs-3"></i>
-                                    <span className="position-absolute top-50 start- translate-middle badge rounded-pill bg-danger">
-                                        8
-                                    </span>
-                                    <h6 className='fw-light mt-1 text-white'>Mis compras</h6>
-                                </Link>
-                            </li>
-                        </ul>
+                                    <Link to={`/cart/details`} type="button" className="btn position-relative margin-auto text-white">
+                                        <i className="bi bi-cart-plus fs-3"></i>
+                                        <span className="position-absolute top-50 start- translate-middle badge rounded-pill bg-danger">
+                                            0
+                                        </span>
+                                        <h6 className='fw-light mt-1 text-white'>Mis compras</h6>
+                                    </Link>
+                                </li>
+                            </ul>
+                        )}
+                        {user && user.role != null && (
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <Link to={`/yo`} className='btn text-white'><i className="bi bi-person fs-2"></i> <h6 className='fw-light'>Mis Datos</h6></Link>
+                                    {user && user.role === "user" && (
+                                        <Link to={`/cart/details`} type="button" className="btn position-relative margin-auto text-white">
+                                            <i className="bi bi-cart-plus fs-3"></i>
+                                            <span className="position-absolute top-50 start- translate-middle badge rounded-pill bg-danger">
+                                                8
+                                            </span>
+                                            <h6 className='fw-light mt-1 text-white'>Mis compras</h6>
+                                        </Link>
+                                    )}
+                                    {user && user.role === "admin" && (
+                                        <Link to={`/dashboard`} className='btn text-white'>
+                                            <i class="bi bi-speedometer2 fs-2"></i>
+                                            <h6 className='fw-light'>Dashboard</h6></Link>
 
+                                    )}
+                                    <Link to="/" onClick={logoutHandler} className='btn text-white'>
+                                    <i class="bi bi-box-arrow-right fs-3"></i> 
+                                    <h6 className='fw-light text-white' >Salir</h6></Link>
+                                </li>
+                            </ul>
+                        )}
                     </div>
                 </div>
             </nav>

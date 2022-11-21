@@ -22,10 +22,6 @@ const usersSchema = mongoose.Schema({
         minLength: [8, "tu contraseña debe contener minimo 8 caracteres"],
         select: false
     },
-    photoPerfil: [{
-        public_id: { type: String, required: true },
-        url: { type: String, required: true }
-    }],
     role: {
         type: String,
         required: [true, "Seleccione el Rol de Usuario"],
@@ -34,7 +30,8 @@ const usersSchema = mongoose.Schema({
                 "user",
                 "admin"
             ]
-        }
+        },
+        default: "user"
     },
     fechaRegistro: {
         type: Date,
@@ -43,7 +40,7 @@ const usersSchema = mongoose.Schema({
     celular: {
         type: String,
         required: [true, "Ingrese su número de celular"],
-        maxLength: [10, "El número celular debe contener 10 dígitos"]
+        maxLength: [12, "El número celular debe contener 10 dígitos"]
     },
     departamento: {
         type: String,

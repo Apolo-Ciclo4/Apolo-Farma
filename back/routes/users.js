@@ -3,9 +3,9 @@ const router=express.Router();
 const { registroUsuario, loginUser, logOut, forgotPassword, resetPassword, getUserProfile, updatePassword, updateProfile, getAllUsers, deleteUser } = require("../controllers/usersController");
 const { isAuthenticatedUser } = require("../middleware/users");
 
-router.route('/user/new').post(registroUsuario);
-router.route('/user/login').get(loginUser)
-router.route('/user/logout').get(logOut)
+router.route('/usuario/registro').post(registroUsuario);
+router.route('/login').post(loginUser)
+router.route('/logout').get(logOut)
 router.route('/user/forgotpassword').post(forgotPassword)
 router.route('/resetPassword/:token').post(resetPassword)
 router.route('/profile').get( isAuthenticatedUser, getUserProfile)
